@@ -1,13 +1,14 @@
-export const keyAction = (id, volume, mute, toggleBank) => {
+export const keyAction = (id, volume, mute, toggleBank, animState) => {
   let originState = {
     volume:volume,
     mute:mute,
-    toggleBank: toggleBank};
+    toggleBank: toggleBank,
+    animState:animState};
 
   if(mute){
     switch(id){
       case 'Enter':
-        return ({toggleBank:toggleBank, volume:volume, mute:!mute});
+        return ({toggleBank:toggleBank, volume:volume, mute:!mute, animState:animState});
       default:
         return originState;
     }
@@ -17,11 +18,11 @@ export const keyAction = (id, volume, mute, toggleBank) => {
     //modify toggleBank
     case 'Tab':
       document.getElementById('display').innerHTML = toggleBank ? 'Smooth Piano Kit' : 'Heater Kit';
-      return ({toggleBank:!toggleBank, volume:volume, mute:mute});
+      return ({toggleBank:!toggleBank, volume:volume, mute:mute, animState:animState});
 
     //modify mute
     case 'Enter':
-      return ({toggleBank:toggleBank, volume:volume, mute:!mute});
+      return ({toggleBank:toggleBank, volume:volume, mute:!mute, animState:animState});
 
     //modify volume
     case 'ArrowUp':
@@ -29,7 +30,7 @@ export const keyAction = (id, volume, mute, toggleBank) => {
         let newVol = Number((volume+0.1).toFixed(2));
         let displayStr=(newVol*100).toFixed(2);
         document.getElementById('display').innerHTML = 'Volume: '+displayStr.slice(0, displayStr.length-3);
-        return ({toggleBank:toggleBank, volume:newVol, mute:mute});
+        return ({toggleBank:toggleBank, volume:newVol, mute:mute, animState:animState});
       }else{
         return originState;
       }
@@ -40,7 +41,7 @@ export const keyAction = (id, volume, mute, toggleBank) => {
         let newVol = Number((volume-0.1).toFixed(2));
         let displayStr=(newVol*100).toFixed(2);
         document.getElementById('display').innerHTML = 'Volume: '+displayStr.slice(0, displayStr.length-3);
-        return ({toggleBank:toggleBank, volume:newVol, mute:mute});
+        return ({toggleBank:toggleBank, volume:newVol, mute:mute, animState:animState});
       }else{
         return originState;
       }
@@ -54,7 +55,14 @@ export const keyAction = (id, volume, mute, toggleBank) => {
         let mapStr = str.match(/\w+/g);
         let formatStr = mapStr.map((x)=>x[0].toUpperCase()+x.slice(1));
         document.getElementById('display').innerHTML = formatStr.join(' ');
-        return originState;
+        if(animState){
+          document.getElementById('inner'+id).classList.add('animation-inner');
+          document.getElementById('outer'+id).classList.add('animation-outer');
+        }else{
+          document.getElementById('backup-inner'+id).classList.add('animation-inner');
+          document.getElementById('backup-outer'+id).classList.add('animation-outer');
+        }
+        return ({toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
       }else{
         return originState;
       }

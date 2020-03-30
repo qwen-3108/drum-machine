@@ -7,14 +7,23 @@
 }
 
 .grid-item{
-  display:flex;
-  align-items: center;
+  position:relative;
+}
+
+.grid-item svg{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
 
 .drum-pad{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   width:100px;
   height:100px;
-  margin:0 auto;
   background:var(--light);
   border-radius:50%;
   display:flex;
@@ -31,4 +40,29 @@
   cursor:default;
   color:var(--dark);
   font-weight:600;
+}
+
+.animation-inner{
+  animation:clicked 1s;
+  animation-fill-mode:backwards;
+}
+
+.animation-outer{
+  animation:clicked 1s 0.2s;
+  animation-fill-mode:backwards;
+}
+
+@keyframes clicked {
+  0%{
+    opacity:1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  10%{
+    opacity:0.2;
+    transform: translate(-50%, -50%) scale(2);
+  }
+  100%{
+    opacity:0;
+    transform: translate(-50%, -50%) scale(3);
+  }
 }

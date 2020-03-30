@@ -10,6 +10,7 @@ input[type=range]{
 #drum-machine{
   width:800px;
   height:400px;
+  padding:50px;
   position:absolute;
   top:50%;
   left:50%;
