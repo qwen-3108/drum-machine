@@ -55,14 +55,15 @@ export const keyAction = (id, volume, mute, toggleBank, animState) => {
         let mapStr = str.match(/\w+/g);
         let formatStr = mapStr.map((x)=>x[0].toUpperCase()+x.slice(1));
         document.getElementById('display').innerHTML = formatStr.join(' ');
-        if(animState){
-          document.getElementById('inner'+id).classList.add('animation-inner');
-          document.getElementById('outer'+id).classList.add('animation-outer');
-        }else{
+        if(animState.includes(id)){
           document.getElementById('backup-inner'+id).classList.add('animation-inner');
           document.getElementById('backup-outer'+id).classList.add('animation-outer');
+          return({toggleBank:toggleBank, mute:mute, animState:animState.slice(1)+'0', volume:volume});
+        }else{
+          document.getElementById('inner'+id).classList.add('animation-inner');
+          document.getElementById('outer'+id).classList.add('animation-outer');
+          return ({toggleBank:toggleBank, mute:mute, animState:animState.slice(1)+id, volume:volume});
         }
-        return ({toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
       }else{
         return originState;
       }

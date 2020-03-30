@@ -13,15 +13,14 @@ const DrumPad = () =>{
       let mapStr = str.match(/\w+/g);
       let formatStr = mapStr.map((x)=>x[0].toUpperCase()+x.slice(1));
       document.getElementById('display').innerHTML = formatStr.join(' ');
-      if(animState){
-        document.getElementById('inner'+id).classList.add('animation-inner');
-        document.getElementById('outer'+id).classList.add('animation-outer');
-        setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
-      }else{
-        console.log('backup triggered');
+      if(animState.includes(id)){
         document.getElementById('backup-inner'+id).classList.add('animation-inner');
         document.getElementById('backup-outer'+id).classList.add('animation-outer');
-        setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
+        setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:animState.slice(1)+'0', volume:volume});
+      }else{
+        document.getElementById('inner'+id).classList.add('animation-inner');
+        document.getElementById('outer'+id).classList.add('animation-outer');
+        setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:animState.slice(1)+id, volume:volume});
       }
     }
   }

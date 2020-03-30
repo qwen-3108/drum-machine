@@ -10,7 +10,7 @@ import './App.css';
 
 const App = () => {
 
-  const { setState, volume, mute, toggleBank, ...state } = useContext(DrumContext);
+  const { setState, volume, mute, toggleBank, animState, ...state } = useContext(DrumContext);
 
   const focus=()=>{
     setInterval(()=>document.getElementById('drum-machine').focus(), 500);
@@ -26,7 +26,7 @@ const App = () => {
 
   const keyHandler =(e)=> {
     let id = e.key;
-    let newState = keyAction(id, volume, mute, toggleBank);
+    let newState = keyAction(id, volume, mute, toggleBank, animState);
     setState({...newState, ...state});
   }
 

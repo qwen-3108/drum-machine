@@ -32,7 +32,7 @@ const DrumContextProvider = (props) => {
       triggered:
         false,
       animState:
-        true});
+        '00'});
 
     return(
         <DrumContext.Provider value={{...state, setState}}>
