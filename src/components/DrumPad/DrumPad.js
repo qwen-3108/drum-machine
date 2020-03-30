@@ -16,13 +16,11 @@ const DrumPad = () =>{
       if(animState){
         document.getElementById('inner'+id).classList.add('animation-inner');
         document.getElementById('outer'+id).classList.add('animation-outer');
-        console.log('normal triggered', animState);
         setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
       }else{
         console.log('backup triggered');
         document.getElementById('backup-inner'+id).classList.add('animation-inner');
         document.getElementById('backup-outer'+id).classList.add('animation-outer');
-        console.log(animState);
         setState({audioBank:audioBank, toggleBank:toggleBank, mute:mute, animState:!animState, volume:volume});
       }
     }
