@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/drum-machine/static/css/main.cd3db716.chunk.css",
+    "main.js": "/drum-machine/static/js/main.a61bc62f.chunk.js",
+    "main.js.map": "/drum-machine/static/js/main.a61bc62f.chunk.js.map",
+    "runtime-main.js": "/drum-machine/static/js/runtime-main.8a31b1c5.js",
+    "runtime-main.js.map": "/drum-machine/static/js/runtime-main.8a31b1c5.js.map",
+    "static/js/2.c4690ddc.chunk.js": "/drum-machine/static/js/2.c4690ddc.chunk.js",
+    "static/js/2.c4690ddc.chunk.js.map": "/drum-machine/static/js/2.c4690ddc.chunk.js.map",
+    "index.html": "/drum-machine/index.html",
+    "precache-manifest.0dc1fa7f3ac8983ec52088d2f34400c0.js": "/drum-machine/precache-manifest.0dc1fa7f3ac8983ec52088d2f34400c0.js",
+    "service-worker.js": "/drum-machine/service-worker.js",
+    "static/css/main.cd3db716.chunk.css.map": "/drum-machine/static/css/main.cd3db716.chunk.css.map",
+    "static/js/2.c4690ddc.chunk.js.LICENSE.txt": "/drum-machine/static/js/2.c4690ddc.chunk.js.LICENSE.txt",
+    "static/media/chord-1.mp3": "/drum-machine/static/media/chord-1.d8544f3e.mp3",
+    "static/media/chord-2.mp3": "/drum-machine/static/media/chord-2.3946f9fe.mp3",
+    "static/media/chord-3.mp3": "/drum-machine/static/media/chord-3.074c0a82.mp3",
+    "static/media/clap.mp3": "/drum-machine/static/media/clap.3062daca.mp3",
+    "static/media/closed-hh.mp3": "/drum-machine/static/media/closed-hh.abe03961.mp3",
+    "static/media/heater-1.mp3": "/drum-machine/static/media/heater-1.b1cfea05.mp3",
+    "static/media/heater-2.mp3": "/drum-machine/static/media/heater-2.0d219666.mp3",
+    "static/media/heater-3.mp3": "/drum-machine/static/media/heater-3.632e8772.mp3",
+    "static/media/heater-4.mp3": "/drum-machine/static/media/heater-4.d9de8a50.mp3",
+    "static/media/kick-n-hat.mp3": "/drum-machine/static/media/kick-n-hat.200b4bd3.mp3",
+    "static/media/kick.mp3": "/drum-machine/static/media/kick.09fda256.mp3",
+    "static/media/open-hh.mp3": "/drum-machine/static/media/open-hh.5c9f8087.mp3",
+    "static/media/punchy-kick.mp3": "/drum-machine/static/media/punchy-kick.a6a991c5.mp3",
+    "static/media/shaker.mp3": "/drum-machine/static/media/shaker.561c9a54.mp3",
+    "static/media/side-stick.mp3": "/drum-machine/static/media/side-stick.123a99c7.mp3",
+    "static/media/snare.mp3": "/drum-machine/static/media/snare.cd861874.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a31b1c5.js",
+    "static/js/2.c4690ddc.chunk.js",
+    "static/css/main.cd3db716.chunk.css",
+    "static/js/main.a61bc62f.chunk.js"
+  ]
+}
