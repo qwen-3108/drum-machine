@@ -12,12 +12,8 @@ const App = () => {
 
   const { setState, volume, mute, toggleBank, animState, ...state } = useContext(DrumContext);
 
-  const focus=()=>{
-    setInterval(()=>document.getElementById('drum-machine').focus(), 500);
-  }
-
   useEffect(()=>{
-    focus();
+    document.getElementById('drum-machine').focus();
     var audioClip = document.getElementsByTagName('audio');
     for(let i=0; i<audioClip.length; i++){
       audioClip[i].volume = volume;
@@ -27,6 +23,7 @@ const App = () => {
   const keyHandler =(e)=> {
     let id = e.key;
     let newState = keyAction(id, volume, mute, toggleBank, animState);
+    e.preventDefault();
     setState({...newState, ...state});
   }
 

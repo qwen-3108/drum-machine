@@ -18,6 +18,10 @@
   margin:0;
 }
 
+#volume input:focus{
+  outline:none;
+}
+
 #volume input::-webkit-slider-runnable-track{
   -webkit-appearance:none;
   height:4px;
@@ -32,4 +36,34 @@
   border-radius:50%;
   background:var(--dark);
   margin:-8px;
+}
+
+#volume input::-moz-range-track{
+  height:4px;
+  border-radius:2px;
+  background:var(--light);
+}
+
+#volume input::-moz-range-thumb{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  border:none;
+  background:var(--dark);
+  margin:-8px;
+}
+
+#volume input::-ms-track{
+  height:4px;
+  border-radius:2px;
+  background:pink;
+  overflow:visible;
+}
+
+#volume input::-ms-thumb{
+  width:16px;
+  height:4px;
+  border-radius:2px;
+  background:#ED4C67;
+  margin:0px;
 }

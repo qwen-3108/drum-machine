@@ -22,6 +22,10 @@
   margin:0;
 }
 
+#toggle-bank input:focus{
+  outline:none;
+}
+
 #toggle-bank input::-webkit-slider-runnable-track{
   -webkit-appearance:none;
   height:24px;
@@ -35,6 +39,37 @@
   height:20px;
   border-radius:10px;
   background:var(--dark);
+  margin:2px;
+  transition: left 2s;
+}
+
+#toggle-bank input::-moz-range-track{
+  height:24px;
+  border-radius:12px;
+  background:var(--light);
+}
+
+#toggle-bank input::-moz-range-thumb{
+  width:40px;
+  height:20px;
+  border-radius:10px;
+  border:none;
+  background:var(--dark);
+  margin:2px;
+  transition: left 2s;
+}
+
+#toggle-bank input::-ms-track{
+  height:24px;
+  border-radius:12px;
+  background:pink;
+}
+
+#toggle-bank input::-ms-thumb{
+  width:40px;
+  height:20px;
+  border-radius:10px;
+  background:#ED4C67;
   margin:2px;
   transition: left 2s;
 }
