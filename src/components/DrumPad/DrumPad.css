@@ -37,7 +37,6 @@
 .drum-pad p{
   margin: 0 auto;
   font-size:21px;
-  cursor:default;
   color:var(--dark);
   font-weight:600;
 }
